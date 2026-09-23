@@ -1,0 +1,1367 @@
+/* =====================================================
+   DAPUR LELUHUR
+   CHECKOUT PAGE
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background: #f7f7f2;
+
+    color: #242820;
+
+    font-family: "DM Sans", sans-serif;
+
+}
+
+
+:root {
+
+    --green: #829f4c;
+    --green-dark: #617b35;
+    --green-light: #b6ca78;
+
+    --cream: #f7f7f2;
+    --white: #ffffff;
+
+    --text: #242820;
+    --muted: #777c70;
+
+    --border: rgba(40, 50, 30, .12);
+
+    --transition: .3s ease;
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 86px;
+
+    padding: 0 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    z-index: 1000;
+
+    background: rgba(247, 247, 242, .94);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+}
+
+
+.brand {
+
+    color: var(--text);
+
+    text-decoration: none;
+
+}
+
+
+.brand-text h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+}
+
+
+.brand-text p {
+
+    margin-top: 5px;
+
+    font-size: 10px;
+
+    color: var(--muted);
+
+    letter-spacing: .4px;
+
+}
+
+
+/* =====================================================
+   NAV MENU
+===================================================== */
+
+.nav-menu {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 40px;
+
+}
+
+
+.nav-menu a {
+
+    position: relative;
+
+    color: #555a50;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: var(--transition);
+
+}
+
+
+.nav-menu a:hover {
+
+    color: var(--green-dark);
+
+}
+
+
+.nav-menu a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -8px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--green);
+
+    transform: translateX(-50%);
+
+    transition: var(--transition);
+
+}
+
+
+.nav-menu a:hover::after {
+
+    width: 100%;
+
+}
+
+
+/* =====================================================
+   NAV ACTIONS
+===================================================== */
+
+.nav-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.icon-btn,
+.cart-btn {
+
+    position: relative;
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: none;
+
+    background: transparent;
+
+    color: #4e5448;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.icon-btn:hover,
+.cart-btn:hover {
+
+    color: var(--green-dark);
+
+    background: rgba(130, 159, 76, .1);
+
+}
+
+
+.cart-count {
+
+    position: absolute;
+
+    top: 0;
+
+    right: -1px;
+
+    min-width: 17px;
+
+    height: 17px;
+
+    padding: 0 4px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--green);
+
+    color: #fff;
+
+    border-radius: 50%;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   HAMBURGER
+===================================================== */
+
+.menu-toggle {
+
+    display: none;
+
+    width: 38px;
+
+    height: 38px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+}
+
+
+.menu-toggle span {
+
+    width: 21px;
+
+    height: 2px;
+
+    background: #4e5448;
+
+    border-radius: 5px;
+
+}
+
+
+/* =====================================================
+   CHECKOUT PAGE
+===================================================== */
+
+.checkout-page {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 65px 7% 80px;
+
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.page-header {
+
+    margin-bottom: 40px;
+
+}
+
+
+.eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    color: var(--green-dark);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
+}
+
+
+.page-header h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(40px, 5vw, 58px);
+
+    font-weight: 600;
+
+    line-height: 1.1;
+
+    color: #293020;
+
+}
+
+
+.page-header p {
+
+    max-width: 600px;
+
+    margin-top: 14px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   LAYOUT
+===================================================== */
+
+.checkout-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(300px, .65fr);
+
+    gap: 30px;
+
+    align-items: start;
+
+}
+
+
+/* =====================================================
+   CUSTOMER SECTION
+===================================================== */
+
+.customer-section {
+
+    padding: 28px;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.heading-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(130, 159, 76, .1);
+
+    color: var(--green-dark);
+
+    border-radius: 50%;
+
+    font-size: 15px;
+
+}
+
+
+.section-heading h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+    color: #30372a;
+
+}
+
+
+.section-heading p {
+
+    margin-top: 3px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.checkout-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.form-group label {
+
+    margin-bottom: 8px;
+
+    color: #454b3e;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.form-group label span {
+
+    color: #b65b5b;
+
+}
+
+
+.form-group label small {
+
+    color: var(--muted);
+
+    font-weight: 400;
+
+}
+
+
+.input-wrapper {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.input-wrapper > i {
+
+    position: absolute;
+
+    left: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #9ca291;
+
+    font-size: 13px;
+
+    pointer-events: none;
+
+}
+
+
+.input-wrapper input,
+.input-wrapper textarea {
+
+    width: 100%;
+
+    border: 1px solid var(--border);
+
+    outline: none;
+
+    background: #fcfcf9;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    border-radius: 10px;
+
+    transition: var(--transition);
+
+}
+
+
+.input-wrapper input {
+
+    height: 46px;
+
+    padding: 0 15px 0 42px;
+
+}
+
+
+.input-wrapper textarea {
+
+    padding: 13px 15px 13px 42px;
+
+    resize: vertical;
+
+    min-height: 95px;
+
+    line-height: 1.6;
+
+}
+
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus {
+
+    background: #fff;
+
+    border-color: rgba(130, 159, 76, .55);
+
+    box-shadow:
+        0 0 0 4px rgba(130, 159, 76, .08);
+
+}
+
+
+.input-wrapper input::placeholder,
+.input-wrapper textarea::placeholder {
+
+    color: #a4a89e;
+
+}
+
+
+.form-group small {
+
+    margin-top: 6px;
+
+    color: #94998d;
+
+    font-size: 9px;
+
+}
+
+
+/* =====================================================
+   TEXTAREA ICON
+===================================================== */
+
+.textarea-wrapper {
+
+    align-items: flex-start;
+
+}
+
+
+.textarea-wrapper > i {
+
+    top: 20px;
+
+}
+
+
+/* =====================================================
+   PAYMENT INFO
+===================================================== */
+
+.payment-info {
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    background: rgba(130, 159, 76, .07);
+
+    border: 1px solid rgba(130, 159, 76, .14);
+
+    border-radius: 11px;
+
+}
+
+
+.payment-icon {
+
+    width: 34px;
+
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(130, 159, 76, .12);
+
+    color: var(--green-dark);
+
+    border-radius: 50%;
+
+    font-size: 13px;
+
+}
+
+
+.payment-info strong {
+
+    color: #454b3e;
+
+    font-size: 11px;
+
+}
+
+
+.payment-info p {
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   SUBMIT
+===================================================== */
+
+.submit-btn {
+
+    width: 100%;
+
+    min-height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: var(--green);
+
+    color: #fff;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+}
+
+
+.submit-btn:hover {
+
+    background: var(--green-dark);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =====================================================
+   ORDER SUMMARY
+===================================================== */
+
+.order-summary {
+
+    position: sticky;
+
+    top: 110px;
+
+    padding: 25px;
+
+    background: #fff;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+}
+
+
+.summary-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+}
+
+
+.summary-header h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 22px;
+
+    font-weight: 600;
+
+    color: #30372a;
+
+}
+
+
+.summary-header a {
+
+    color: var(--green-dark);
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+}
+
+
+.summary-header a:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =====================================================
+   SUMMARY PRODUCTS
+===================================================== */
+
+.summary-products {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+}
+
+
+.summary-product {
+
+    display: grid;
+
+    grid-template-columns: 55px minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.summary-product-image {
+
+    width: 55px;
+
+    height: 50px;
+
+    overflow: hidden;
+
+    border-radius: 9px;
+
+    background: #e6ebd9;
+
+}
+
+
+.summary-product-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.summary-product-name {
+
+    color: #454b3e;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+}
+
+
+.summary-product-quantity {
+
+    margin-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+}
+
+
+.summary-product-total {
+
+    color: var(--green-dark);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.summary-divider {
+
+    height: 1px;
+
+    margin: 20px 0;
+
+    background: var(--border);
+
+}
+
+
+/* =====================================================
+   SUMMARY ROW
+===================================================== */
+
+.summary-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+}
+
+
+.summary-row strong {
+
+    color: #454b3e;
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================================
+   SUMMARY TOTAL
+===================================================== */
+
+.summary-total {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.summary-total span {
+
+    color: #454b3e;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+
+.summary-total strong {
+
+    color: var(--green-dark);
+
+    font-size: 19px;
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    z-index: 9999;
+
+    padding: 13px 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: #293020;
+
+    color: #fff;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, .2);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(15px);
+
+    transition: var(--transition);
+
+}
+
+
+.toast.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+
+}
+
+
+.toast i {
+
+    color: #e2a36c;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+
+        padding: 0 5%;
+
+    }
+
+
+    .checkout-page {
+
+        padding-left: 5%;
+        padding-right: 5%;
+
+    }
+
+
+    .checkout-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .order-summary {
+
+        position: static;
+
+        grid-row: 1;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .navbar {
+
+        height: 76px;
+
+        padding: 0 6%;
+
+    }
+
+
+    .brand-text h2 {
+
+        font-size: 22px;
+
+    }
+
+
+    .brand-text p {
+
+        font-size: 9px;
+
+    }
+
+
+    /* MENU */
+
+    .nav-menu {
+
+        position: absolute;
+
+        top: 68px;
+
+        left: 6%;
+
+        right: 6%;
+
+        padding: 12px;
+
+        display: none;
+
+        flex-direction: column;
+
+        gap: 2px;
+
+        background: rgba(255, 255, 255, .97);
+
+        border: 1px solid var(--border);
+
+        border-radius: 14px;
+
+        box-shadow:
+            0 15px 35px rgba(30, 40, 20, .12);
+
+    }
+
+
+    .nav-menu.show {
+
+        display: flex;
+
+    }
+
+
+    .nav-menu a {
+
+        padding: 12px;
+
+        border-radius: 8px;
+
+    }
+
+
+    .nav-menu a:hover {
+
+        background: rgba(130, 159, 76, .08);
+
+    }
+
+
+    .nav-menu a::after {
+
+        display: none;
+
+    }
+
+
+    .menu-toggle {
+
+        display: flex;
+
+    }
+
+
+    /* PAGE */
+
+    .checkout-page {
+
+        padding: 50px 6%;
+
+    }
+
+
+    .page-header {
+
+        margin-bottom: 28px;
+
+    }
+
+
+    .page-header h1 {
+
+        font-size: 39px;
+
+    }
+
+
+    .page-header p {
+
+        font-size: 13px;
+
+    }
+
+
+    .customer-section {
+
+        padding: 20px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 20px;
+
+    }
+
+
+    .order-summary {
+
+        padding: 20px;
+
+    }
+
+
+    .toast {
+
+        right: 15px;
+
+        left: 15px;
+
+        bottom: 15px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .navbar {
+
+        padding: 0 5%;
+
+    }
+
+
+    .brand-text h2 {
+
+        font-size: 20px;
+
+    }
+
+
+    .brand-text p {
+
+        font-size: 8px;
+
+    }
+
+
+    .checkout-page {
+
+        padding-left: 5%;
+        padding-right: 5%;
+
+    }
+
+
+    .page-header h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .customer-section {
+
+        padding: 17px;
+
+    }
+
+
+    .section-heading {
+
+        margin-bottom: 23px;
+
+    }
+
+
+    .summary-product {
+
+        grid-template-columns: 48px minmax(0, 1fr) auto;
+
+    }
+
+
+    .summary-product-image {
+
+        width: 48px;
+
+        height: 45px;
+
+    }
+
+}

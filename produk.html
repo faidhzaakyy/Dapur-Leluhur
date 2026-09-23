@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produk — Dapur Leluhur</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="produk.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="brand">
+
+            <div class="brand-text">
+
+                <h2>Dapur Leluhur</h2>
+
+                <p>
+                    Teh Herbal Desa Pabian
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- NAV MENU -->
+
+        <nav class="nav-menu" id="navMenu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="produk.html" class="active">
+                Produk
+            </a>
+
+            <a href="kontak.html">
+                Kontak
+            </a>
+
+        </nav>
+
+
+        <!-- NAV ACTIONS -->
+
+        <div class="nav-actions">
+
+            <!-- Search -->
+
+            <button
+                class="icon-btn"
+                id="searchButton"
+                aria-label="Cari produk"
+            >
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </button>
+
+
+            <!-- Cart -->
+
+            <a
+                href="cart.html"
+                class="cart-btn"
+                aria-label="Keranjang belanja"
+            >
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span
+                    class="cart-count"
+                    id="cartCount"
+                >
+                    0
+                </span>
+
+            </a>
+
+
+            <!-- Hamburger -->
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Buka menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+        <!-- PAGE HEADER -->
+
+        <section class="products-header">
+
+            <span class="eyebrow">
+                DAPUR LELUHUR
+            </span>
+
+            <h1>
+                Pilihan Teh Herbal
+            </h1>
+
+            <p>
+                Nikmati olahan herbal pilihan dari Desa Pabian
+                yang dibuat dengan bahan alami dan penuh perhatian.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             SEARCH BOX
+        ========================== -->
+
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="productSearch"
+                    placeholder="Cari produk..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PRODUCTS
+        ========================== -->
+
+        <section class="products-section">
+
+            <div
+                class="products-grid"
+                id="productsGrid"
+            >
+
+                <!-- Produk akan dibuat oleh JavaScript -->
+
+            </div>
+
+
+            <!-- EMPTY -->
+
+            <div
+                class="empty-products"
+                id="emptyProducts"
+            >
+
+                <i class="fa-solid fa-box-open"></i>
+
+                <h3>
+                    Produk tidak ditemukan
+                </h3>
+
+                <p>
+                    Coba gunakan kata kunci yang berbeda.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         TOAST
+    ========================== -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span>
+            Produk ditambahkan ke keranjang
+        </span>
+
+    </div>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="produk.js"></script>
+
+</body>
+
+</html>

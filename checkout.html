@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout — Dapur Leluhur</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="checkout.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="brand">
+
+            <div class="brand-text">
+
+                <h2>Dapur Leluhur</h2>
+
+                <p>
+                    Teh Herbal Desa Pabian
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <nav class="nav-menu" id="navMenu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="produk.html">
+                Produk
+            </a>
+
+            <a href="kontak.html">
+                Kontak
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a
+                href="produk.html"
+                class="icon-btn"
+                aria-label="Cari produk"
+            >
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+
+
+            <a
+                href="cart.html"
+                class="cart-btn"
+                aria-label="Keranjang belanja"
+            >
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span
+                    class="cart-count"
+                    id="cartCount"
+                >
+                    0
+                </span>
+
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Buka menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+        <section class="checkout-page">
+
+
+            <!-- =========================
+                 HEADER
+            ========================== -->
+
+            <div class="page-header">
+
+                <span class="eyebrow">
+                    DAPUR LELUHUR
+                </span>
+
+                <h1>
+                    Checkout
+                </h1>
+
+                <p>
+                    Lengkapi data pesanan untuk melanjutkan
+                    proses pemesanan.
+                </p>
+
+            </div>
+
+
+
+            <!-- =========================
+                 CHECKOUT LAYOUT
+            ========================== -->
+
+            <div class="checkout-layout">
+
+
+                <!-- =========================
+                     CUSTOMER FORM
+                ========================== -->
+
+                <section class="customer-section">
+
+                    <div class="section-heading">
+
+                        <div class="heading-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                Data Pemesan
+                            </h2>
+
+                            <p>
+                                Isi data berikut dengan benar.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="checkoutForm"
+                        class="checkout-form"
+                    >
+
+
+                        <!-- NAMA -->
+
+                        <div class="form-group">
+
+                            <label for="customerName">
+                                Nama Lengkap
+                                <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <input
+                                    type="text"
+                                    id="customerName"
+                                    name="customerName"
+                                    placeholder="Masukkan nama lengkap"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- WHATSAPP -->
+
+                        <div class="form-group">
+
+                            <label for="customerPhone">
+                                Nomor WhatsApp
+                                <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <i class="fa-brands fa-whatsapp"></i>
+
+                                <input
+                                    type="tel"
+                                    id="customerPhone"
+                                    name="customerPhone"
+                                    placeholder="Contoh: 081234567890"
+                                    autocomplete="tel"
+                                    required
+                                >
+
+                            </div>
+
+                            <small>
+                                Nomor ini digunakan untuk konfirmasi pesanan.
+                            </small>
+
+                        </div>
+
+
+
+                        <!-- ALAMAT -->
+
+                        <div class="form-group">
+
+                            <label for="customerAddress">
+                                Alamat Pengiriman
+                                <span>*</span>
+                            </label>
+
+                            <div class="input-wrapper textarea-wrapper">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                <textarea
+                                    id="customerAddress"
+                                    name="customerAddress"
+                                    placeholder="Masukkan alamat lengkap"
+                                    rows="4"
+                                    required
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- CATATAN -->
+
+                        <div class="form-group">
+
+                            <label for="customerNote">
+                                Catatan Pesanan
+                                <small>(Opsional)</small>
+                            </label>
+
+                            <div class="input-wrapper textarea-wrapper">
+
+                                <i class="fa-solid fa-note-sticky"></i>
+
+                                <textarea
+                                    id="customerNote"
+                                    name="customerNote"
+                                    placeholder="Contoh: Tolong dikirim sore hari."
+                                    rows="3"
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- PAYMENT INFO -->
+
+                        <div class="payment-info">
+
+                            <div class="payment-icon">
+
+                                <i class="fa-solid fa-wallet"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Pembayaran
+                                </strong>
+
+                                <p>
+                                    Detail pembayaran akan dikonfirmasi
+                                    melalui WhatsApp setelah pesanan diterima.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="submit-btn"
+                        >
+
+                            <span>
+                                Konfirmasi Pesanan
+                            </span>
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+
+                    </form>
+
+                </section>
+
+
+
+                <!-- =========================
+                     ORDER SUMMARY
+                ========================== -->
+
+                <aside class="order-summary">
+
+                    <div class="summary-header">
+
+                        <h2>
+                            Pesanan Kamu
+                        </h2>
+
+                        <a href="cart.html">
+                            Edit
+                        </a>
+
+                    </div>
+
+
+                    <div
+                        class="summary-products"
+                        id="summaryProducts"
+                    >
+                        <!-- JavaScript -->
+                    </div>
+
+
+                    <div class="summary-divider"></div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Jumlah Produk
+                        </span>
+
+                        <strong id="summaryQuantity">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="summarySubtotal">
+                            Rp0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-divider"></div>
+
+
+                    <div class="summary-total">
+
+                        <span>
+                            Total Pesanan
+                        </span>
+
+                        <strong id="summaryTotal">
+                            Rp0
+                        </strong>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         TOAST
+    ========================== -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+
+        <i class="fa-solid fa-circle-exclamation"></i>
+
+        <span id="toastText">
+            Silakan periksa data.
+        </span>
+
+    </div>
+
+
+
+    <script src="checkout.js"></script>
+
+</body>
+
+</html>

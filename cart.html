@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Keranjang — Dapur Leluhur</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="brand">
+
+            <div class="brand-text">
+
+                <h2>Dapur Leluhur</h2>
+
+                <p>
+                    Teh Herbal Desa Pabian
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <nav class="nav-menu" id="navMenu">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="produk.html">
+                Produk
+            </a>
+
+            <a href="kontak.html">
+                Kontak
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a
+                href="produk.html"
+                class="icon-btn"
+                aria-label="Cari produk"
+            >
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+
+
+            <a
+                href="cart.html"
+                class="cart-btn active"
+                aria-label="Keranjang belanja"
+            >
+
+                <i class="fa-solid fa-cart-shopping"></i>
+
+                <span
+                    class="cart-count"
+                    id="cartCount"
+                >
+                    0
+                </span>
+
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Buka menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+        <section class="cart-page">
+
+            <!-- HEADER -->
+
+            <div class="page-header">
+
+                <span class="eyebrow">
+                    DAPUR LELUHUR
+                </span>
+
+                <h1>
+                    Keranjang Belanja
+                </h1>
+
+                <p>
+                    Periksa kembali produk yang ingin
+                    kamu pesan sebelum melanjutkan.
+                </p>
+
+            </div>
+
+
+
+            <!-- =========================
+                 CART CONTENT
+            ========================== -->
+
+            <div
+                class="cart-layout"
+                id="cartLayout"
+            >
+
+                <!-- CART ITEMS -->
+
+                <section class="cart-items">
+
+                    <div class="cart-items-header">
+
+                        <h2>
+                            Produk Pilihan
+                        </h2>
+
+                        <span id="itemLabel">
+                            0 produk
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="cart-list"
+                        id="cartList"
+                    >
+                        <!-- Diisi JavaScript -->
+                    </div>
+
+                </section>
+
+
+
+                <!-- SUMMARY -->
+
+                <aside class="cart-summary">
+
+                    <h2>
+                        Ringkasan Pesanan
+                    </h2>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="subtotal">
+                            Rp0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-row">
+
+                        <span>
+                            Jumlah Produk
+                        </span>
+
+                        <strong id="summaryItems">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-divider"></div>
+
+
+                    <div class="summary-total">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong id="total">
+                            Rp0
+                        </strong>
+
+                    </div>
+
+
+                    <a
+                        href="checkout.html"
+                        class="checkout-btn"
+                        id="checkoutBtn"
+                    >
+
+                        Lanjut Checkout
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <a
+                        href="produk.html"
+                        class="continue-btn"
+                    >
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Lanjut Belanja
+
+                    </a>
+
+                </aside>
+
+            </div>
+
+
+
+            <!-- =========================
+                 EMPTY CART
+            ========================== -->
+
+            <section
+                class="empty-cart"
+                id="emptyCart"
+            >
+
+                <div class="empty-icon">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </div>
+
+                <h2>
+                    Keranjang Masih Kosong
+                </h2>
+
+                <p>
+                    Belum ada produk yang kamu pilih.
+                    Yuk, lihat pilihan teh herbal kami.
+                </p>
+
+                <a
+                    href="produk.html"
+                    class="empty-btn"
+                >
+
+                    <i class="fa-solid fa-store"></i>
+
+                    Lihat Produk
+
+                </a>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         TOAST
+    ========================== -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        <span id="toastText">
+            Produk dihapus
+        </span>
+
+    </div>
+
+
+
+    <script src="cart.js"></script>
+
+</body>
+
+</html>
